@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'event.css' %}">
+{% endblock head %}
+
+{% block content %}
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'usereventlist' %}">Back</a>
+
+<div class="container">
+
+<div class="item">
+<h1>{{ service.user.username }}</h1>
+<p>{{ service.address }}</p>
+
+{% if event is False %}
+
+    <h3>Code has been claimed</h3>
+</div>
+{% elif event is not None %}
+
+    <p>Start Time: {{ event.start_time }}</p>
+    <p>End Time: {{ event.end_time }}</p>
+    <p>Item: {{ event.items }}</p>
+    <p>Amount: {{ event.category }}</p>
+    <p>Stock Left: {{ event.amount }}</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</div>
+{% else %}
+    <h2>There are no current events for this organization</h2>
+</div>
+{% endif %}
+</div>
+{% endblock content %}

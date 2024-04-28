@@ -1,0 +1,123 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #C5C6D0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+
+}
+
+.login-container {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #229C13;
+    width: 100%;
+}
+
+div#banner-content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+div#main-content {
+    padding-top: 70px;
+}
+
+/* unvisited link */
+a:link {
+    color: #8D139C;
+}
+
+/* visited link */
+a:visited {
+    /* color: #6A0E75; */
+    color: #580C62;
+}
+
+/* mouse over link */
+a:hover {
+    color: #8D139C;
+}
+
+/* selected link */
+a:active {
+    color: #13669C;
+}
+
+#submit {
+    width: 18.25em;
+    height: 2em;
+    color: #fff;
+    background-color: #229C13;
+    font-size: 100%;
+    margin-top: .25em;
+
+    text-align: center;
+
+    border: none;
+    border-radius: 4px;
+}
+
+#submit:hover {
+    width: 18.25em;
+    height: 2em;
+    color: #fff;
+    background-color: #1c800f;
+    font-size: 100%;
+    margin-top: .25em;
+
+    text-align: center;
+
+    border: none;
+    border-radius: 4px;
+}  
+
+label {
+    display: inline-block;
+    width: 4.5em;
+    /* Adjust width as needed */
+    /* text-align: right; */
+    margin-right: 1em;
+    /* Add some spacing between label and input */
+    background-color: #fff;
+    border-radius: 10px;
+    color: #229C13;
+    padding: 2px;
+}
+
+/* Style input */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    /* Adjust width as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box
+}

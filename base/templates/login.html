@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<div>
+<h1>User Login</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <input type="submit" id="submit" value="Submit">
+</form>
+
+
+<p>Don't have an account?  <a href="{% url 'usersignup' %}">Sign Up</a> </p>
+<p>Are you a service? <a href="{% url 'servicelogin' %}">Service Login</a> </p>
+</div>
+{% endblock content %}

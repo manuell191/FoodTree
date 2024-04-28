@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'usereventlist.css' %}">
+{% endblock head %}
+
+{% block content %}
+<a href="{% url 'logout' %}" class="button">Logout</a>
+
+<div class="container">
+<h1>User Event List</h1>
+{% for service in service_list %}
+
+<div class="post">
+    <a href="{% url 'event' service.id %}">
+        <h3>{{ service.user.username }}</h3>
+        <p>{{ service.address }}</p>
+    </a>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}

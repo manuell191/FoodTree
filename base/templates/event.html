@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'event.css' %}">
+{% endblock head %}
+
+{% block content %}
+
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'serviceeventlist' %}">Back</a>
+
+<div class="container">
+<div class="item">
+<h1>Code: {{ event.code }}</h1>
+<p>Item: {{ event.items }}</p>
+<p>Stock Left: {{ event.amount }}</p>
+<p>Amount: {{ event.category }}</p>
+<p>Start Time: {{ event.start_time }}</p>
+<p>End Time: {{ event.end_time }}</p>
+</div>
+</div>
+{% endblock content %}
